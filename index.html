@@ -6,98 +6,121 @@
 <title>Rebecca &amp; Rafael</title>
 <meta name="description" content="Rebecca and Rafael's 3 year anniversary weekend in Crestone, Colorado, November 5 to 8, 2026">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f4efe6;
-    --paper: #fffdf8;
-    --ink: #221f1a;
-    --muted: #6f675b;
-    --line: #e3d9c8;
-    --accent: #9a4a2c;
-    --accent-soft: #f4e3da;
-    --sage: #4a5e4a;
-    --sage-soft: #e4ebe2;
-    --dusk: #5a4a7a;
-    --dusk-soft: #e9e3f1;
-    --gold: #b8893b;
+    /* San Luis Valley: dune sand, adobe, sagebrush, Sangre de Cristo alpenglow, night sky */
+    --bg: #f2eadb;
+    --paper: #fbf7ef;
+    --ink: #2a231e;
+    --muted: #6e6253;
+    --line: #e2d5bf;
+    --accent: #9b3a2a;
+    --accent-soft: #f2dfd6;
+    --sage: #5f7052;
+    --sage-soft: #e6eadc;
+    --dusk: #2d3350;
+    --dusk-soft: #e4e5ee;
+    --gold: #b88443;
+    --shadow: 0 4px 16px rgba(60, 40, 20, .07);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #16140f; --paper: #1f1c15; --ink: #ede6d8; --muted: #a49c8d;
-      --line: #36312a; --accent: #d98a62; --accent-soft: #3a2a20;
-      --sage: #9bb79a; --sage-soft: #233024; --dusk: #b3a4d6; --dusk-soft: #2a2438; --gold: #d8aa56;
+      --bg: #13141c; --paper: #1c1d27; --ink: #efe6d6; --muted: #a8a090;
+      --line: #2f303d; --accent: #e08667; --accent-soft: #3a2420;
+      --sage: #a4b892; --sage-soft: #232b22; --dusk: #9fa8d8; --dusk-soft: #23263a; --gold: #dcae66;
+      --shadow: 0 4px 16px rgba(0, 0, 0, .35);
     }
   }
+  :root[data-theme="dark"] {
+    --bg: #13141c; --paper: #1c1d27; --ink: #efe6d6; --muted: #a8a090;
+      --line: #2f303d; --accent: #e08667; --accent-soft: #3a2420;
+      --sage: #a4b892; --sage-soft: #232b22; --dusk: #9fa8d8; --dusk-soft: #23263a; --gold: #dcae66;
+      --shadow: 0 4px 16px rgba(0, 0, 0, .35);
+  }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.55; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.6;
+    background-image: linear-gradient(180deg, var(--accent-soft) 0, transparent 420px);
+    background-repeat: no-repeat; }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 64px; }
-  header { padding: 56px 0 24px; text-align: center; }
-  .eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: 12px; color: var(--accent); font-weight: 600; }
-  h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: clamp(38px, 8vw, 58px); line-height: 1.05; margin: 10px 0 8px; }
+  header { padding: 52px 0 24px; text-align: center; }
+  .eyebrow { letter-spacing: .2em; text-transform: uppercase; font-size: 12px; color: var(--accent); font-weight: 700; }
+  h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: clamp(46px, 11vw, 70px); line-height: 1.05; margin: 10px 0 4px; color: var(--ink); }
+  h1 .amp { font-size: .7em; color: var(--gold); padding: 0 .08em; }
+  .tagline { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.35; max-width: 520px; margin-left: auto; margin-right: auto; color: var(--ink); margin: 0 0 10px; }
   .sub { color: var(--muted); font-size: 15px; }
-  .scene { margin: 20px auto 0; display: block; width: 100%; max-width: 380px; }
+  .scene { margin: 22px auto 0; display: block; width: 100%; max-width: 560px; border-radius: 16px; box-shadow: 0 10px 30px rgba(40, 30, 50, .18); }
+  .hearts-divider { text-align: center; color: var(--gold); letter-spacing: .8em; font-size: 12px; opacity: .8; margin: 28px 0 0; }
 
-  .note { background: var(--sage-soft); border-left: 4px solid var(--sage); padding: 14px 16px; border-radius: 6px; margin: 24px 0; font-size: 15px; }
+  .note { background: var(--sage-soft); border: 0; border-left: 3px solid var(--sage); padding: 16px 18px; border-radius: 10px; margin: 24px 0; font-size: 15px; }
   .note strong { color: var(--sage); }
 
-  h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 30px; margin: 44px 0 4px; }
-  .day-meta { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+  h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; margin: 44px 0 2px; color: var(--ink); }
+  .day-meta { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
 
-  .block { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; }
-  .time { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
-  .block h3 { margin: 4px 0 6px; font-size: 18px; font-weight: 600; }
+  .block { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .time { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .time::before { content: "✦ "; }
+  .block h3 { margin: 4px 0 6px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 23px; font-weight: 600; line-height: 1.2; }
   .block p { margin: 0 0 8px; }
   .block p:last-child { margin-bottom: 0; }
-  .tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
+  .tag { display: inline-block; font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 9px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
   .tag.book { background: var(--accent-soft); color: var(--accent); }
   .tag.check { background: var(--sage-soft); color: var(--sage); }
   .tag.star { background: var(--dusk-soft); color: var(--dusk); }
+  .get { background: var(--sage-soft); border-radius: 12px; padding: 10px 14px; font-size: 14px; margin: 10px 0; }
+  .get b { color: var(--sage); }
+  .links { font-size: 13px; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px 8px; }
+  .links a { text-decoration: none; font-weight: 600; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+  .links a::after { content: " ↗"; font-size: 11px; }
+  ul.tight .links { margin-top: 4px; }
   .alt { color: var(--muted); font-size: 14px; }
-  .alt b { color: var(--ink); font-weight: 500; }
+  .alt b { color: var(--ink); font-weight: 700; }
 
   ul.tight { padding-left: 20px; margin: 8px 0 0; }
-  ul.tight li { margin-bottom: 6px; }
+  ul.tight li { margin-bottom: 8px; }
+  ul.tight li::marker { color: var(--accent); }
   .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
   @media (min-width: 560px) { .grid { grid-template-columns: 1fr 1fr; } }
-  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 15px; }
-  .card h4 { margin: 0 0 6px; font-size: 15px; }
-  footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: 13px; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; font-size: 15px; box-shadow: var(--shadow); }
+  .card h4 { margin: 0 0 6px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; }
+  footer { margin-top: 56px; text-align: center; color: var(--muted); font-size: 14px; }
+  footer .sig { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 28px; color: var(--ink); margin-bottom: 4px; }
 
   .tabs { position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; padding: 10px 0; margin: 36px 0 0;
     background: var(--bg); overflow-x: auto; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab { flex: 1 0 auto; min-width: 64px; border: 1px solid var(--line); background: var(--paper); color: var(--ink);
     border-radius: 12px; padding: 8px 10px; font: inherit; cursor: pointer; text-align: center; line-height: 1.2; }
-  .tab b { display: block; font-size: 15px; font-weight: 600; }
+  .tab b { display: block; font-size: 15px; font-weight: 700; }
   .tab span { font-size: 11px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
   .tab[aria-selected="true"] { background: var(--dusk); border-color: var(--dusk); color: #fff; }
-  .tab[aria-selected="true"] span { color: rgba(255,255,255,.8); }
+  .tab[aria-selected="true"] span { color: rgba(255,255,255,.85); }
   .panel[hidden] { display: none; }
   .panel > h2:first-child { margin-top: 18px; }
 
   .countdown { display: flex; justify-content: center; gap: 10px; margin: 22px 0 6px; }
-  .cd { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 8px 0; width: 70px; text-align: center; }
-  .cd b { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.1; }
+  .cd { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 8px 0; width: 70px; text-align: center; box-shadow: var(--shadow); }
+  .cd b { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; line-height: 1.1; color: var(--ink); }
   .cd span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  .cd-label { text-align: center; color: var(--muted); font-size: 13px; }
+  .cd-label { text-align: center; color: var(--muted); font-size: 14px; font-style: italic; }
 
   .sky-wrap { margin: 32px 0 8px; }
-  .sky-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 26px; text-align: center; margin: 0 0 4px; }
+  .sky-title { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; color: var(--ink); text-align: center; margin: 0 0 4px; }
   .sky-sub { text-align: center; color: var(--muted); font-size: 14px; margin: 0 0 12px; }
-  .sky { position: relative; border-radius: 14px; overflow: hidden; background: linear-gradient(#070a1c, #1b1638 70%, #3a2a4a); touch-action: manipulation; }
+  .sky { position: relative; border-radius: 14px; box-shadow: 0 8px 24px rgba(20, 20, 40, .2); overflow: hidden; background: linear-gradient(#070a1c, #1b1638 70%, #3a2a4a); touch-action: manipulation; }
   .sky canvas { display: block; width: 100%; height: 320px; cursor: crosshair; }
   .score { position: absolute; top: 10px; right: 12px; color: #f3e6c4; font-size: 13px; letter-spacing: .08em; }
   .card-wish { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); width: calc(100% - 32px); max-width: 440px;
-    background: rgba(255,250,238,.96); color: #221f1a; border-radius: 12px; padding: 14px 16px; text-align: center;
+    background: rgba(255,251,244,.97); color: #24201b; border-radius: 18px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 19px !important; padding: 14px 16px; text-align: center;
     font-size: 15px; box-shadow: 0 8px 24px rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .3s; }
   .card-wish.show { opacity: 1; pointer-events: auto; }
-  .card-wish small { display: block; color: #9a4a2c; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 11px; margin-bottom: 4px; }
-  .card-wish button { margin-top: 10px; border: 0; background: #5a4a7a; color: #fff; border-radius: 999px; padding: 6px 16px; font: inherit; font-size: 13px; cursor: pointer; }
+  .card-wish small { display: block; color: #a8502f; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 11px; margin-bottom: 4px; }
+  .card-wish button { margin-top: 10px; border: 0; background: #36395a; color: #fff; border-radius: 999px; padding: 6px 16px; font: inherit; font-size: 13px; cursor: pointer; }
   .final { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
     color: #f8edd2; background: rgba(7,10,28,.82); opacity: 0; pointer-events: none; transition: opacity .6s; padding: 16px; }
   .final.show { opacity: 1; pointer-events: auto; }
-  .final h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 38px; margin: 0 0 6px; font-weight: 600; }
+  .final h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 42px; margin: 0 0 6px; font-weight: 600; color: #f8edd2; }
   .final p { margin: 0 0 14px; max-width: 380px; }
   .final button { border: 1px solid #f8edd2; background: transparent; color: #f8edd2; border-radius: 999px; padding: 6px 16px; font: inherit; font-size: 13px; cursor: pointer; }
   .final .row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
@@ -109,9 +132,9 @@
   .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
   .k-q { background: #e8c26a; } .k-d { background: #ff8fa3; } .k-w { background: #b49cff; box-shadow: 0 0 6px #b49cff; }
 
-  .collected { margin-top: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .collected { margin-top: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); padding: 14px 16px; }
   .col-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .col-head h3 { margin: 0; font-size: 16px; }
+  .col-head h3 { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; }
   .col-head span { color: var(--muted); font-size: 13px; }
   .linkbtn { border: 0; background: none; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer; padding: 0; }
   #col-list { list-style: none; padding: 0; margin: 10px 0 0; }
@@ -123,6 +146,16 @@
   #col-list li.done .txt { text-decoration: line-through; color: var(--muted); }
   #col-list input { margin-top: 5px; width: 17px; height: 17px; accent-color: var(--dusk); }
   #col-empty { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+
+  .music { position: fixed; right: 16px; bottom: 16px; z-index: 20; width: 52px; height: 52px; border-radius: 50%; border: 0;
+    background: var(--dusk); color: #fff; font-size: 22px; cursor: pointer;
+    box-shadow: 0 6px 18px rgba(20, 20, 40, .3); display: none; align-items: center; justify-content: center; }
+  .music.ready { display: flex; }
+  .music.playing { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+  .music-hint { position: fixed; right: 76px; bottom: 28px; z-index: 20; background: var(--paper); color: var(--ink); border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 12px; font-size: 13px; box-shadow: var(--shadow); transition: opacity .5s; }
+  .music-hint.hide { opacity: 0; pointer-events: none; }
   a { color: var(--accent); }
 </style>
 </head>
@@ -131,17 +164,51 @@
 
 <header>
   <div class="eyebrow">Three years · Crestone, Colorado</div>
-  <h1>Rebecca &amp; Rafael</h1>
-  <div class="sub">Thursday, November 5 to Sunday, November 8, 2026 · a cabin under the Sangre de Cristos, hot springs, sand dunes, and the darkest sky in Colorado</div>
-  <svg class="scene" viewBox="0 0 380 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="60" cy="30" r="1.6" fill="var(--gold)"/><circle cx="120" cy="18" r="1.2" fill="var(--gold)"/>
-    <circle cx="200" cy="26" r="1.8" fill="var(--gold)"/><circle cx="260" cy="12" r="1.2" fill="var(--gold)"/>
-    <circle cx="330" cy="34" r="1.5" fill="var(--gold)"/><circle cx="290" cy="44" r="1" fill="var(--gold)"/>
-    <path d="M318 20 a9 9 0 1 0 8 14 a7 7 0 1 1 -8 -14z" fill="var(--gold)"/>
-    <polygon points="0,120 70,58 110,78 160,30 205,70 250,40 300,82 380,52 380,120" fill="var(--dusk)" opacity=".85"/>
-    <polygon points="145,46 160,30 175,46 167,42 160,52 153,42" fill="var(--paper)"/>
-    <polygon points="238,52 250,40 262,52 256,49 250,57 244,49" fill="var(--paper)"/>
-    <path d="M0,120 Q90,96 190,108 T380,100 L380,120 Z" fill="var(--gold)" opacity=".55"/>
+  <h1>Rebecca <span class="amp">&amp;</span> Rafael</h1>
+  <p class="tagline">A cabin under the Sangre de Cristos, the dunes, the hot springs, and the darkest sky in Colorado</p>
+  <div class="sub">Thursday, November 5 to Sunday, November 8, 2026</div>
+  <svg class="scene" viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Sangre de Cristo mountains at dusk above the sand dunes">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1d2240"/>
+        <stop offset=".55" stop-color="#5a3f5c"/>
+        <stop offset=".85" stop-color="#c46a4f"/>
+        <stop offset="1" stop-color="#e9a76a"/>
+      </linearGradient>
+      <linearGradient id="peaks" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#b9544a"/>
+        <stop offset=".35" stop-color="#5b3a4a"/>
+        <stop offset="1" stop-color="#2c2438"/>
+      </linearGradient>
+      <linearGradient id="dune" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e3b373"/>
+        <stop offset="1" stop-color="#b9824a"/>
+      </linearGradient>
+      <linearGradient id="dune2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#c99257"/>
+        <stop offset="1" stop-color="#8f5f36"/>
+      </linearGradient>
+    </defs>
+    <rect width="560" height="230" fill="url(#sky)"/>
+    <g fill="#fff4dc">
+      <circle cx="40" cy="22" r="1.2"/><circle cx="92" cy="48" r=".9"/><circle cx="130" cy="16" r="1.4"/><circle cx="178" cy="40" r=".8"/>
+      <circle cx="222" cy="12" r="1.1"/><circle cx="270" cy="34" r="1.5"/><circle cx="318" cy="18" r=".9"/><circle cx="360" cy="44" r="1.1"/>
+      <circle cx="404" cy="14" r=".8"/><circle cx="452" cy="30" r="1.3"/><circle cx="508" cy="20" r="1"/><circle cx="532" cy="52" r=".8"/>
+      <circle cx="66" cy="70" r=".7"/><circle cx="246" cy="62" r=".7"/><circle cx="486" cy="66" r=".7"/>
+    </g>
+    <path d="M478 30 a14 14 0 1 0 12 22 a11 11 0 1 1 -12 -22z" fill="#f6e6c4"/>
+    <polygon fill="url(#peaks)" points="0,150 40,128 72,136 108,96 132,112 160,70 186,92 208,78 236,104 262,58 292,90 318,74 346,102 372,82 404,116 436,98 470,124 506,108 560,132 560,230 0,230"/>
+    <g fill="#f3ddd2" opacity=".9">
+      <polygon points="160,70 152,82 158,80 162,86 168,80"/>
+      <polygon points="262,58 253,72 259,70 263,77 270,70"/>
+      <polygon points="318,74 311,85 316,83 320,88 325,84"/>
+    </g>
+    <path d="M0,176 C70,150 140,150 210,168 C260,180 300,150 360,146 C420,142 480,164 560,156 L560,230 L0,230 Z" fill="url(#dune)"/>
+    <path d="M0,200 C90,184 170,190 250,204 C330,218 420,186 560,196 L560,230 L0,230 Z" fill="url(#dune2)"/>
+    <path d="M210,168 C260,180 300,150 360,146" fill="none" stroke="#f2c98e" stroke-width="1.5" opacity=".7"/>
+    <g fill="#55603f" opacity=".85">
+      <circle cx="36" cy="214" r="5"/><circle cx="44" cy="216" r="4"/><circle cx="118" cy="208" r="4"/><circle cx="470" cy="210" r="5"/><circle cx="478" cy="213" r="3.5"/><circle cx="520" cy="219" r="4"/>
+    </g>
   </svg>
   <div class="countdown" id="countdown">
     <div class="cd"><b id="cd-d">0</b><span>days</span></div>
@@ -149,8 +216,10 @@
     <div class="cd"><b id="cd-m">0</b><span>min</span></div>
     <div class="cd"><b id="cd-s">0</b><span>sec</span></div>
   </div>
-  <div class="cd-label" id="cd-label">until we land in the valley</div>
+  <div class="cd-label" id="cd-label">until our weekend begins</div>
 </header>
+
+<div class="hearts-divider">✦ ✦ ✦</div>
 
 <section class="sky-wrap">
   <h2 class="sky-title">Catch a shooting star</h2>
@@ -196,13 +265,22 @@
 </div>
 
 <h2>Thursday, November 5</h2>
-<div class="day-meta">Arrival night · in by 9 pm · nothing in Crestone serves food that late</div>
+<div class="day-meta">The drive down · Denver to Crestone is about 3 hr 45 min on US-285, plus stops · in by about 9:30</div>
+
+<div class="block">
+  <div class="time">On the way south</div>
+  <h3>Hit a dispo</h3>
+  <p><b>3D Cannabis Center</b> in Salida is the easy one: open until 10 pm and right by the Walmart stop. If you are through Fairplay before 7, <b>Wise Cannabis Co</b> is right on US-285. <b>Nature's Medicine</b> in Salida is a good backup.</p>
+  <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=3D+Cannabis+Center+248+E+US+Hwy+50+Salida+CO" target="_blank" rel="noopener">3D Cannabis Center</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Wise+Cannabis+Co+21950+US+285+Fairplay+CO" target="_blank" rel="noopener">Wise Cannabis Co</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Nature%27s+Medicine+230+W+16th+St+Salida+CO" target="_blank" rel="noopener">Nature's Medicine</a></p>
+</div>
 
 <div class="block">
   <div class="time">On the way in</div>
-  <h3>Groceries before the last 12 miles</h3>
-  <p>Crestone has a small co-op (Elephant Cloud Market) but it closes early. Stock up in the last real town on your route: Safeway or Walmart in Alamosa if flying into ALS, City Market in Salida if coming from the north, Walmart in Alamosa or Safeway in Salida if driving from Denver or Colorado Springs. Pick up: wine, cheese, bread, fruit, chocolate, eggs and bacon for Saturday, and firewood if the cabin does not supply it.</p>
-  <p class="alt">Drive times: Alamosa 1 hr 15 min · Colorado Springs 2 hr 45 min · Denver 3 hr 45 min. The last stretch from Moffat to Crestone is 12.5 miles of straight paved road with no lights. Watch for deer and elk.</p>
+  <h3>Snacks for tonight and breakfast</h3>
+  <p>The Walmart Supercenter in Salida is just off the route and open until 11 pm. At minimum, grab wine, snacks, and coffee for tonight and Friday breakfast, plus firewood if the cabin does not supply it.</p>
+  <p><b>Better: do the whole grocery run here tonight.</b> With the massages now at 1 pm, Friday morning is tight. Shopping tonight (list in the Friday tab) turns Friday into a slow morning with no Salida round trip.</p>
+  <p class="alt">The last stretch from Moffat to Crestone is 12.5 miles of straight paved road with no lights. Watch for deer and elk.</p>
+  <p class="links"><a href="https://www.walmart.com/store/921" target="_blank" rel="noopener">Walmart Salida</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Walmart+Supercenter+7865+W+US+Highway+50+Salida+CO" target="_blank" rel="noopener">Map</a></p>
 </div>
 
 <div class="block">
@@ -212,113 +290,225 @@
 </div>
 
 <h2>Friday, November 6</h2>
-<div class="day-meta">Crestone day · the town, the temples, a couples massage, a soak</div>
+<div class="day-meta">The stupa and the Ziggurat, groceries, massages, sunset from the hot springs</div>
 
 <div class="block">
-  <div class="time">9 am</div>
-  <h3>Breakfast at The Cloud Station <span class="tag check">check</span></h3>
-  <p>Breakfast burritos and coffee in a converted gas station on South Cottonwood. Backup: Bayou Mountain at Bob's Diner on Galena (New Orleans style, weekday mornings).</p>
+  <div class="time">7:15 am</div>
+  <h3>Breakfast at The Cloud Station</h3>
+  <p>Café in a converted gas station at 200 S Cottonwood St. Open daily 7 am to 2:30 pm.</p>
+  <div class="get"><b>What to get:</b> reviewers single out the biscuits and gravy and the Mountain Mama sandwich (cheese and pesto). The coffee and baked goods get steady praise, so grab cookies for the road.</div>
+  <p class="alt"><b>Backup:</b> breakfast at the cabin from last night's shopping. For a later breakfast, Bayou Mountain at Bob's Diner, 182 E Galena Ave, opens Monday to Friday at 8 am. New Orleans style: the honey-fried chicken sandwich is the one people talk about, plus brisket burgers and tallow-fried hashbrowns.</p>
+  <p class="links"><a href="https://www.yelp.com/biz/the-cloud-station-crestone-2" target="_blank" rel="noopener">Cloud Station reviews</a><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Cloud+Station+Crestone+CO" target="_blank" rel="noopener">Map</a><a href="https://bayoumountain.com/" target="_blank" rel="noopener">Bayou Mountain</a></p>
 </div>
 
 <div class="block">
-  <div class="time">10:30 am</div>
-  <h3>Temple drive through the Baca Grande</h3>
-  <p>The spiritual centers sit on the hillside south of town along Camino Baca Grande. Three stops, each a short walk from the car:</p>
+  <div class="time">7:45 am</div>
+  <h3>Morning at the stupa and the Ziggurat</h3>
+  <p>The spiritual centers sit on the hillside south of town in the Baca Grande. Morning light hits the Sangres right behind them, and it is quiet at this hour. An easy way to start the day: about an hour of walking, with time for the grocery run after.</p>
   <ul class="tight">
-    <li><b>Tashi Gomang Stupa.</b> White Tibetan stupa with prayer flags and a view across the whole valley. Walk the circle together.</li>
-    <li><b>Haidakhandi Universal Ashram.</b> Hindu temple with a quiet garden. Shoes off at the door. Visitors welcome.</li>
-    <li><b>The Crestone Ziggurat.</b> A stone spiral tower on a hill. Short climb to the top, 360 degree view of the Sangres and the valley.</li>
+    <li><b>Tashi Gomang Stupa.</b> White Tibetan stupa with prayer flags and a view across the whole valley, open to the public every day. Walk around it clockwise, which is the custom at Buddhist stupas.
+      <p class="links"><a href="https://kttg.org/tashi-gomang-stupa/" target="_blank" rel="noopener">About the stupa</a><a href="https://karmapastupa.org/directions-to-stupa/" target="_blank" rel="noopener">Directions</a></p></li>
+    <li><b>The Crestone Ziggurat.</b> A stone spiral tower on a rocky hill at the southeast edge of the Baca Grande, built as a private place for prayer and open to the public. Walk the spiral ramp to the top for a 360 degree view. Visitors leave small rock arrangements at the base as an intention, a nice thing to do together on an anniversary.
+      <p class="links"><a href="https://atlasobscura.com/places/crestone-ziggurat" target="_blank" rel="noopener">About the Ziggurat</a><a href="https://www.google.com/maps/search/?api=1&amp;query=37.917998,-105.669106" target="_blank" rel="noopener">Map</a></p></li>
   </ul>
-  <p class="alt">Dress warm and speak quietly at all three. They are active places of practice.</p>
+  <p class="alt">Dress warm and speak quietly. These are active places of practice. Allow about an hour for both.</p>
 </div>
 
 <div class="block">
-  <div class="time">12:30 pm</div>
-  <h3>Lunch at Our Food Is Art <span class="tag check">check</span></h3>
-  <p>Tacos, bowls, and smoothies on Galena. Open Thursday to Saturday. Backup: Crestone Brewing Co. on Silver Avenue.</p>
+  <div class="time">9:15 am</div>
+  <h3>Grocery run to Salida <span class="tag check">skip if done Thursday</span></h3>
+  <p>About an hour north over Poncha Pass. <b>Walmart Supercenter</b>, 7865 W US-50, open 6 am to 11 pm. Colorado grocery stores sell wine and beer, so it is one stop.</p>
+  <ul class="tight">
+    <li><b>Wine:</b> a bottle for Friday, a better bottle for Saturday night, something sparkling.</li>
+    <li><b>Saturday steak dinner:</b> two ribeyes or strips, butter, garlic, rosemary, potatoes, a bagged salad, salt and pepper. Check that the cabin has a cast iron pan or grill.</li>
+    <li><b>Friday, if eating in:</b> something easy like pasta or a cheese board.</li>
+    <li><b>Saturday picnic:</b> bread, cheese, salami, fruit, chocolate, a thermos drink.</li>
+    <li><b>Breakfasts:</b> eggs, bacon, coffee, fruit, yogurt.</li>
+    <li><b>Basics:</b> water (a lot), firewood and matches if needed, sunscreen.</li>
+  </ul>
+  <p>Grab lunch to go from the deli, or a quick bite downtown. <b>Leave Salida by 11:45</b> to make the 1 pm massage.</p>
+  <p class="links"><a href="https://www.walmart.com/store/921" target="_blank" rel="noopener">Walmart Salida</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Crestone+CO&amp;destination=Walmart+Supercenter+Salida+CO" target="_blank" rel="noopener">Directions from Crestone</a></p>
 </div>
 
 <div class="block">
-  <div class="time">2 pm</div>
-  <h3>Couples massage at Crestone Massage Therapy <span class="tag book">book</span></h3>
-  <p>Jane Adorney and Steve Fillenberg work out of their off-grid strawbale home 10 minutes from town, with more than 50 years of experience between them. Book both for the same slot so Rebecca and Rafael are on the tables at the same time. Ask for 60 or 90 minutes and hot stone if they offer it. 720-512-1802.</p>
-  <p class="alt"><b>Backup:</b> Joyful Journey has on-site therapists, so a massage can be added before the soak at 5 pm. Smiling Heart Healing Arts and Jenny Che Raven are solo therapists in town.</p>
+  <div class="time">1 pm to 3:30 pm</div>
+  <h3>Massages at Raven's Haven <span class="tag book">booked</span></h3>
+  <p><b>1:00 to 2:30, Rebecca:</b> 90 minute full body massage and facial with Jenny Che Raven.</p>
+  <p><b>2:30 to 3:30, Rafael:</b> 60 minute massage, right after.</p>
+  <div class="get"><b>Good to know:</b> Jenny's specialty is fascia work, and she also does hot stone and reflexology. Ask about hot stone for the second session if it is not already included.</div>
+  <p class="alt">Arrive 10 minutes early. Drink water before and after. During Rebecca's session, Rafael takes the groceries to the cabin and puts them away. During Rafael's, Rebecca can browse Crestone Artisans Gallery at 120 S Cottonwood: jewelry, pottery, and prints by artists from around the valley, often sold by the people who made them.</p>
+  <p class="links"><a href="https://www.massagebook.com/Crestone~Massage~raven" target="_blank" rel="noopener">Raven's Haven</a><a href="http://www.crestoneartisansgallery.com/" target="_blank" rel="noopener">Artisans Gallery</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Crestone+Artisans+Gallery+120+S+Cottonwood+St+Crestone+CO" target="_blank" rel="noopener">Gallery map</a></p>
 </div>
 
 <div class="block">
-  <div class="time">5 pm</div>
-  <h3>Evening soak at Joyful Journey Hot Springs <span class="tag book">book</span></h3>
-  <p>Thirty minutes west in Moffat. Three mineral pools at different temperatures, two hot tubs, a cold plunge, and a dry sauna, all facing the mountains. Day use runs until 8 pm on Fridays. Call ahead to confirm day passes are available: 719-256-4328.</p>
+  <div class="time">4:30 pm to 6 pm</div>
+  <h3>Soak at Joyful Journey Hot Springs <span class="tag book">booked</span> <span class="tag star">dark sky</span></h3>
+  <p>Thirty minutes west in Moffat, so leave Raven's Haven by 3:45. 90 minutes, $65, towels included, with access to the private pool and the public pools. Sunset is just before 5, right in the middle of the soak: the sky goes orange over the valley and the Sangres glow pink, then the first stars come out before you leave.</p>
+  <ul class="tight">
+    <li><b>Ease in at The Tower Pool</b> (104°F) after the massages.</li>
+    <li><b>Be in the private pool for sunset</b>, just the two of you.</li>
+    <li><b>Finish in The View Pool</b> (108°F), the hottest, facing the mountains. It is whisper-only.</li>
+    <li>The cool pool (98°F), two hot tubs, a cold plunge, and a sauna are there for breaks.</li>
+  </ul>
+  <div class="get"><b>Good to know:</b> no alcohol in the pool area, so save the wine for the cabin. The sauna is included, and there is a cold shower by the pools. The front desk sells snacks and drinks. Robes rent for $5.</div>
+  <p class="links"><a href="https://joyfuljourneyhotsprings.com/pools/" target="_blank" rel="noopener">The pools</a><a href="https://joyfuljourneyhotsprings.com/faq/" target="_blank" rel="noopener">FAQ</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Joyful+Journey+Hot+Springs+Spa+Moffat+CO" target="_blank" rel="noopener">Map</a></p>
 </div>
 
 <div class="block">
-  <div class="time">7:30 pm</div>
-  <h3>Dinner at The Bliss <span class="tag book">book</span></h3>
-  <p>Thai and French in the Bliss Inn on Silver Avenue, the one place in town open seven days a week. Reserve a table and ask for one by the window.</p>
-  <p class="alt"><b>Backup:</b> Sage's Hearth or People's Pub &amp; Kitchen, both in town. Call for hours.</p>
+  <div class="time">7 pm</div>
+  <h3>Dinner, depending on the mood</h3>
+  <p>All of these are open Friday at 7. Joyful Journey is 30 minutes from Crestone and 15 from Saguache.</p>
+  <ul class="tight">
+    <li><b>Sage's Hearth, Crestone</b> <span class="tag book">call ahead</span>. The nicest dinner in town: farm-to-table food from local ingredients, craft cocktails, and desserts the restaurant is proud of. Dinner Wednesday to Saturday, 4:30 to 8:30 pm, so arrive by 7:30. 242 Baca Townhouse. Call or text to hold a table: 719-405-0171 or text 719-214-5610.
+      <p class="links"><a href="https://www.sageshearth.com/" target="_blank" rel="noopener">Sage's Hearth</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Sage%27s+Hearth+Crestone+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>People's Pub &amp; Kitchen, Crestone.</b> Relaxed, roomy, sometimes live music. Open Friday noon to 10 pm. 120 W Silver Ave, 719-256-0410.
+      <div class="get"><b>What to get:</b> the Piney's Burger with Freedom Fries and the Wedge Salad.</div>
+      <p class="links"><a href="https://maps.roadtrippers.com/us/crestone-co/food-drink/peoples-pub-kitchen-crestone-co--0" target="_blank" rel="noopener">People's Pub</a><a href="https://www.google.com/maps/search/?api=1&amp;query=People%27s+Pub+%26+Kitchen+120+W+Silver+Ave+Crestone+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>The Village Pub, Pizza &amp; Spirits, Saguache.</b> The closest to the hot springs, 15 minutes north. Open Friday 11 am to 10 pm. 401 4th St. The drive back to Crestone from here is about 45 minutes.
+      <div class="get"><b>What to get:</b> reviewers name the Amber's Ambrosia pizza and the veggie pesto pizza, plus the calzones and Italian egg rolls. Save room for the cheesecake. Big beer list.</div>
+      <p class="links"><a href="https://www.restaurantji.com/co/saguache/the-village-pub-pizza-and-spirits-/" target="_blank" rel="noopener">Reviews</a><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Village+Pub+Pizza+Spirits+401+4th+St+Saguache+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>The Bliss, Crestone.</b> Thai and French food in the Bliss Inn, 187 W Silver Ave. Listed as open seven days. Call to confirm Friday dinner hours.
+      <p class="links"><a href="https://www.yelp.com/biz/the-bliss-crestone" target="_blank" rel="noopener">The Bliss</a><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Bliss+187+W+Silver+Ave+Crestone+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>Cook at the cabin.</b> Something easy from the grocery run, a fire, the Friday bottle, then outside under the stars before bed.</li>
+  </ul>
+  <p class="alt">Our Food Is Art closes at 8 on Fridays, too tight after the soak. If everyone is starving the second you get out, the Joyful Journey front desk sells snacks.</p>
 </div>
 
 <h2>Saturday, November 7</h2>
-<div class="day-meta">Anniversary day · the dunes, a waterfall, an adults-only hot springs, and a long night at the cabin</div>
+<div class="day-meta">Anniversary day · the dunes, a waterfall, antiques in Alamosa, sunset at the Greenhouse, steak dinner at the cabin</div>
 
 <div class="block">
   <div class="time">8:30 am</div>
   <h3>Breakfast at the cabin</h3>
-  <p>Cook together. Pack the picnic for lunch while the coffee brews: sandwiches, fruit, a thermos of something hot, a blanket.</p>
+  <p>Cook together. Pack the picnic while the coffee brews: bread, cheese, fruit, a thermos of something hot, a blanket.</p>
 </div>
 
 <div class="block">
   <div class="time">10 am</div>
-  <h3>Great Sand Dunes National Park</h3>
-  <p>Forty-five minutes south. Park at the main Dunes lot and walk out onto the sand. The creek bed will be dry in November, so you can cross straight onto the dunes. Climb High Dune if the legs are willing (about 2.5 miles round trip, a real workout in sand), or just pick a ridge and sit. The dunes are empty in November and the light on the Sangres behind them is the whole point.</p>
-  <p class="alt">Entrance fee is $25 per vehicle. The visitor center has a short film worth ten minutes.</p>
+  <h3>Hike: Great Sand Dunes National Park</h3>
+  <p>Forty-five minutes south. Park at the main Dunes lot and walk out onto the sand. The creek bed will be dry in November, so you can cross straight onto the dunes.</p>
+  <ul class="tight">
+    <li><b>High Dune:</b> about 2.5 miles round trip and 688 feet of climbing in sand, with no trail. Allow two to three hours. The view from the top covers the whole dune field.</li>
+    <li><b>Or Mosca Pass Trail:</b> a forest trail up a creek valley, 3.5 miles one way. Walk the first mile or two and turn back. A good pick if sand sounds like too much.</li>
+  </ul>
+  <p>Picnic on the sand at noon. Entrance fee is $25 per vehicle.</p>
+  <p class="links"><a href="https://www.nps.gov/grsa/planyourvisit/hiking.htm" target="_blank" rel="noopener">Park hiking guide</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Great+Sand+Dunes+Dunes+Parking+Lot" target="_blank" rel="noopener">Dunes parking map</a></p>
 </div>
 
 <div class="block">
-  <div class="time">12:30 pm</div>
-  <h3>Picnic at the dunes, then Zapata Falls</h3>
-  <p>Eat on the sand with the dunes in front of you. Then drive 10 minutes south to the Zapata Falls turnoff: a rough 3.5 mile gravel road up to the trailhead (any car with care, AWD ideal), then a half mile walk to a 25 foot waterfall tucked inside a rock crevice. In November it is partly frozen into ice columns. The overlook on the way up has the best single view of the dunes anywhere.</p>
+  <div class="time">12:45 pm</div>
+  <h3>Hike: Zapata Falls</h3>
+  <p>Ten minutes south of the park entrance. A rough 3.5 mile gravel road up to the trailhead (any car with care, AWD ideal), then a half mile walk to a 25 foot waterfall tucked inside a rock crevice. In November it is partly frozen into ice columns. The overlook on the way up has the best single view of the dunes anywhere.</p>
+  <div class="get"><b>Good to know:</b> the last stretch means stepping into the creek and over slick rocks. Wear waterproof boots, and in ice, stop at the mouth of the crevice and look in.</div>
+  <p class="links"><a href="https://www.outdoorsy.com/guide/zapata-falls-special-recreation-management-area" target="_blank" rel="noopener">About Zapata Falls</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Zapata+Falls+Trailhead+Mosca+CO" target="_blank" rel="noopener">Map</a></p>
 </div>
 
 <div class="block">
-  <div class="time">3 pm</div>
-  <h3>The Greenhouse at Sand Dunes Recreation <span class="tag book">book</span></h3>
-  <p>In Hooper, 35 minutes west of the park and on the way back toward Crestone. The Greenhouse is a 21 and over hot springs built inside a 10,000 square foot greenhouse: four pools at different temperatures, a sauna, tropical plants, and a bar that serves you in the water. This is the anniversary soak. Two hours, a drink each, no phones. Call 719-378-2807 to confirm Greenhouse hours and whether they take reservations for the day.</p>
+  <div class="time">2 pm</div>
+  <h3>Antiques and thrift in Alamosa <span class="tag check">check</span></h3>
+  <p>Thirty minutes from Zapata. Downtown Alamosa has the best antiquing and thrifting in the valley, all within a few blocks. About an hour here, leaving by 3:15.</p>
+  <ul class="tight">
+    <li><b>Happy Mountain Antiques</b>, 417 San Juan Ave. Open Saturday 10 to 3, so go here first. Look for the estate jewelry, vintage glassware, mid-century pieces, and Colorado memorabilia.
+      <p class="links"><a href="https://www.alamosa.org/listing/happy-mountain-antiques-shop-alamosa-co/" target="_blank" rel="noopener">Happy Mountain</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Happy+Mountain+Antiques+417+San+Juan+Ave+Alamosa+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>Kreative Kraftworks</b>, 412 San Juan Ave, across the street. Handmade jewelry and crystals.
+      <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kreative+Kraftworks+412+San+Juan+Ave+Alamosa+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>Wild Roses, A Country Store</b>, 511 Main St. Antiques, vintage glassware, home decor.
+      <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Wild+Roses+511+Main+St+Alamosa+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>Hunt Ave Boutique</b>, 509 Hunt Ave. Thrift: secondhand clothing, glassware, books.
+      <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hunt+Ave+Boutique+509+Hunt+Ave+Alamosa+CO" target="_blank" rel="noopener">Map</a></p></li>
+  </ul>
+  <p class="links"><a href="https://www.alamosa.org/blog/10-unique-retail-stores-found-in-alamosa/" target="_blank" rel="noopener">Alamosa shop guide</a></p>
 </div>
 
 <div class="block">
-  <div class="time">6 pm</div>
-  <h3>Anniversary dinner <span class="tag book">book</span></h3>
-  <p><b>Option A, eat there:</b> the Mile Deep Grille at Sand Dunes Recreation serves to the pool deck, so you can go straight from the water to a table. Easy, warm, no driving between.</p>
-  <p><b>Option B, back in Crestone:</b> The Bliss again, or Our Food Is Art if you liked it Friday (Saturday close is 8 pm, so reserve for 6:30 and leave Hooper by 5:30).</p>
+  <div class="time">3:45 pm to 5:45 pm</div>
+  <h3>Sunset at the Greenhouse, Sand Dunes Recreation <span class="tag book">book</span></h3>
+  <p>In Hooper, about 25 minutes north of Alamosa and on the way back toward Crestone. A 21 and over hot springs inside a 10,000 square foot greenhouse: pools at different temperatures, a sauna, a steam room, tropical plants, and the Steel Box Bar. This is the anniversary soak, timed for sunset just before 5: the light through the glass goes gold, and the Sangres to the east turn pink. Two hours, a drink each, no phones. Call 719-378-2807 to confirm Greenhouse hours and whether they take reservations.</p>
+  <div class="get"><b>What to get:</b> a drink from the Steel Box Bar, where the house beer has been brewed with hops grown in the greenhouse itself. One visitor wrote up the seared tuna as the food pick. For the pools, the long zero-entry pool with the fountain is the comfortable one (around 98°F). The smallest tubs run 107 to 110°F, so go easy in those.</div>
+  <p class="links"><a href="https://www.alamosa.org/?p=2598" target="_blank" rel="noopener">Sand Dunes Recreation</a><a href="https://livingtinywithawolf.com/sand-dunes-recreation-hot-springs-pool/" target="_blank" rel="noopener">Visitor write-up</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Sand+Dunes+Recreation+1991+County+Road+63+Hooper+CO" target="_blank" rel="noopener">Map</a></p>
+</div>
+
+<div class="block">
+  <div class="time">7 pm</div>
+  <h3>Anniversary steak dinner at the cabin</h3>
+  <p>About 50 minutes home from Hooper. Open the good bottle while the pan heats.</p>
+  <ul class="tight">
+    <li><b>Steaks:</b> out of the fridge 30 minutes early, salt well. Cast iron very hot, about 4 minutes a side for medium rare, then baste with butter, garlic, and rosemary for the last minute. Rest 5 minutes.</li>
+    <li><b>Potatoes:</b> start them in the oven at 425°F first, about 40 minutes, so they finish with the steaks.</li>
+    <li><b>Salad</b> on the side.</li>
+  </ul>
+  <p class="alt">Water boils at a lower temperature at 8,000 feet, so anything boiled takes longer. Searing and roasting work the same.</p>
 </div>
 
 <div class="block">
   <div class="time">8:30 pm</div>
   <h3>Cabin night <span class="tag star">dark sky</span></h3>
-  <p>Fire, the good bottle you saved, and the gifts. Then outside: lay the blanket down, lie back, and watch for shooting stars. The Taurid meteor shower peaks in early November and throws slow, bright fireballs. Read each other the letters written before the trip.</p>
+  <p>Fire, the good bottle, and the gifts. Then outside: lay the blanket down, lie back, and watch for shooting stars. The Taurid meteor shower peaks in early November and throws slow, bright fireballs. Read each other the letters written before the trip.</p>
 </div>
 
 <h2>Sunday, November 8</h2>
-<div class="day-meta">Departure · leave Crestone by 2:30 pm for Alamosa, by 1 pm for Colorado Springs, by noon for Denver</div>
+<div class="day-meta">A light hike, then the drive to Denver for the 6 pm flight · antiques in Salida and Buena Vista on the way · be at DEN by 4</div>
 
 <div class="block">
-  <div class="time">9 am</div>
-  <h3>Slow breakfast in town</h3>
-  <p>The Cloud Station or the cabin. Walk the two blocks of downtown one more time. Stop at the Crestone Mercantile and the co-op for a small thing to take home.</p>
+  <div class="time">7 am</div>
+  <h3>Breakfast and pack up</h3>
+  <p>Last breakfast at the cabin with whatever is left. Pack the car, check out (rules are in the cabin listing), and take one photo from the door.</p>
 </div>
 
 <div class="block">
-  <div class="time">11 am</div>
-  <h3>Valley View Hot Springs <span class="tag book">book</span></h3>
-  <p>Forty minutes north near Villa Grove, on a hillside with the whole valley below. Natural rock pools fed by warm springs, a waterfall pool, and a sauna, no chemicals, no lights, no phones allowed near the water. It is clothing optional and run by a land trust, so it feels like nowhere else. Reservations are required and non-members can only book one day ahead, so call 719-256-4315 on Saturday morning. Day use opens at 11 am.</p>
-  <p class="alt"><b>If that is not your thing:</b> hike the North Crestone Creek Trail instead. Trailhead is 2 miles north of town past the campground. Walk along the creek through aspen and pine for a 3 to 4 mile out and back, then an early lunch at Crestone Brewing Co.</p>
+  <div class="time">7:45 am</div>
+  <h3>Light hike: Willow Lake Trail <span class="tag check">after check-out</span></h3>
+  <p>The trail into the peaks you see from the cabin. Check out first and bring the packed car, since the trailhead is just a few minutes from town. Drive east on E Galena Ave until it turns to gravel and ends at a large lot with a sign. The road is rough but fine for a mid-size car.</p>
+  <p>The full trail climbs steadily for about 4.4 miles to Willow Lake and its 100 foot waterfall, about 6 hours round trip, so today is a taste: <b>walk up for about 45 minutes, turn around, and be back at the car by 9:15.</b> The views of the valley open up behind you as you climb.</p>
+  <div class="get"><b>Good to know:</b> it climbs the whole way and starts high, so go slow. Expect snow and ice on the trail in November. Bring water, layers, and something with grip. If it is icy at the start, walk the Baca Grande stupa and Ziggurat loop again instead.</div>
+  <p class="links"><a href="https://www.theoutbound.com/colorado/hiking/hike-to-willow-lake-co" target="_blank" rel="noopener">Willow Lake Trail</a><a href="https://www.hikingproject.com/directory/8015105/crestone" target="_blank" rel="noopener">Trails near Crestone</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Willow+Lake+Trailhead+Crestone+CO" target="_blank" rel="noopener">Trailhead map</a></p>
 </div>
 
 <div class="block">
-  <div class="time">1:30 pm</div>
-  <h3>Lunch on the way out</h3>
-  <p>Heading to Alamosa: Milagros Coffee House or San Luis Valley Brewing downtown. Heading north to Salida: The Fritz or Amicas. Then the airport, or the long road home.</p>
+  <div class="time">9:30 am</div>
+  <h3>Leave Crestone</h3>
+  <p>North through Villa Grove and over Poncha Pass. About an hour to Salida.</p>
+</div>
+
+<div class="block">
+  <div class="time">10:30 am to 12:15 pm</div>
+  <h3>Antiques, thrift, and lunch in Salida <span class="tag check">check</span></h3>
+  <p>A walkable historic downtown on the Arkansas River, full of galleries and secondhand shops:</p>
+  <ul class="tight">
+    <li><b>Antiques &amp; What Nots</b>, on US-50 west of town, so it comes first. Part thrift, part antique store.
+      <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Antiques+%26+What+Nots+Salida+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>True Vintage Finds &amp; Homegoods</b> on F Street. Furniture, old books, jewelry, housewares.
+      <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=True+Vintage+Finds+Salida+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>Ruby Blues</b>, downtown in a historic corner building. Vintage clothing, jackets, and accessories.
+      <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ruby+Blues+Salida+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>The Old Log Cabin Antiques</b>. Eclectic antiques.
+      <p class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Old+Log+Cabin+Antiques+Salida+CO" target="_blank" rel="noopener">Map</a></p></li>
+  </ul>
+  <p class="links"><a href="https://www.thirstcolorado.com/source/2024/10/7/antique-road-trip" target="_blank" rel="noopener">Salida antique guide</a><a href="https://broketourist.net/thrift-stores-salida-co/" target="_blank" rel="noopener">Salida thrift guide</a></p>
+  <p><b>Lunch, pick one:</b></p>
+  <ul class="tight">
+    <li><b>The Fritz</b>, 113 E Sackett Ave, a block from the river. Small plates and cocktails.
+      <div class="get"><b>What to get:</b> whipped feta, the onion tart, the Bolognese, and the smashburger come up most in reviews. People also like the cocktail list.</div>
+      <p class="links"><a href="https://www.tripadvisor.com/Restaurant_Review-g33630-d1888271-Reviews-The_Fritz-Salida_Chaffee_County_Colorado.html" target="_blank" rel="noopener">Reviews</a><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Fritz+113+E+Sackett+Ave+Salida+CO" target="_blank" rel="noopener">Map</a></p></li>
+    <li><b>Amicas</b>, 127 F St. Wood-fired pizza and house-brewed beer, open daily 11 am to 8 pm.
+      <div class="get"><b>What to get:</b> the Michelangelo pizza is the regulars' favorite, with the Alghero and Bianco close behind. Add the Amicas salad, and try their own root beer or a house microbrew.</div>
+      <p class="links"><a href="https://www.restaurantji.com/co/salida/amicas-pizza-microbrew-and-more-/" target="_blank" rel="noopener">Reviews</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Amicas+127+F+St+Salida+CO" target="_blank" rel="noopener">Map</a></p></li>
+  </ul>
+</div>
+
+<div class="block">
+  <div class="time">12:45 pm</div>
+  <h3>Rustic Emporium in Buena Vista <span class="tag check">check</span></h3>
+  <p>Twenty-five minutes north of Salida, right on the way. Locally owned since 2002: antiques, home and garden decor, and gifts. A 20 to 30 minute stop.</p>
+  <p class="links"><a href="https://business.buenavistacolorado.org/directory/Details/rustic-emporium-2739755" target="_blank" rel="noopener">Rustic Emporium</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Rustic+Emporium+Buena+Vista+CO" target="_blank" rel="noopener">Map</a></p>
+</div>
+
+<div class="block">
+  <div class="time">1:15 pm</div>
+  <h3>Drive to Denver International</h3>
+  <p>About 2 hr 30 min from Buena Vista on US-285. Arrive around 3:45, return the car, and check in for the 6 pm flight.</p>
+  <p class="alt">If the shops run long or the weather turns on Kenosha Pass, skip Buena Vista. Do not cut it closer than leaving Buena Vista by 1:30.</p>
+  <p class="links"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Buena+Vista+CO&amp;destination=Denver+International+Airport" target="_blank" rel="noopener">Directions to DEN</a></p>
 </div>
 
 <h2>Before we leave Atlanta</h2>
@@ -326,18 +516,18 @@
   <div class="card">
     <h4>Reservations</h4>
     <ul class="tight">
-      <li>Crestone Massage Therapy, couples, Fri 2 pm: 720-512-1802</li>
-      <li>The Bliss, Fri 7:30 pm (and Sat if choosing Option B)</li>
-      <li>Joyful Journey day pass, Fri evening: 719-256-4328</li>
-      <li>Sand Dunes Recreation Greenhouse, Sat 3 pm: 719-378-2807</li>
-      <li>Valley View, call Sat morning for Sun: 719-256-4315</li>
+      <li>Raven's Haven, Fri 1 pm (Rebecca 90 min) and 2:30 pm (Rafael 60 min): call to move from 2 pm</li>
+      <li>Joyful Journey, Fri 4:30 to 6 pm, private and public pools: call to move from 6:30</li>
+      <li>Sand Dunes Recreation Greenhouse, Sat 3:45 pm: 719-378-2807</li>
       <li>Rental car with AWD and decent clearance</li>
     </ul>
   </div>
   <div class="card">
     <h4>Calls the week before</h4>
     <ul class="tight">
-      <li>Cloud Station, Our Food Is Art, Bayou Mountain hours</li>
+      <li>Cloud Station and Bayou Mountain hours</li>
+      <li>Sage's Hearth: hold a Friday 7 pm table, 719-405-0171</li>
+      <li>Saturday hours for the Alamosa shops, Sunday hours for Salida and Buena Vista</li>
       <li>Cabin: firewood, hot tub, heat, check-in instructions</li>
       <li>Great Sand Dunes conditions: 719-378-6395</li>
     </ul>
@@ -363,8 +553,14 @@
   </div>
 </div>
 
-<footer>Rebecca &amp; Rafael · three years · Crestone, Colorado · November 2026</footer>
+<footer><span class="sig">Happy three years</span>Rebecca &amp; Rafael · San Luis Valley, Colorado · November 2026</footer>
 </div>
+
+
+<!-- Background song: put an audio file named our-song.mp3 next to this page in the repo. -->
+<audio id="song" src="our-song.mp3" loop preload="auto"></audio>
+<button class="music" id="music" type="button" aria-label="Play or pause our song">♫</button>
+<div class="music-hint hide" id="music-hint">tap anywhere for our song</div>
 
 <script>
 (function () {
@@ -389,6 +585,32 @@
     setTimeout(tick, 1000);
   }
   tick();
+
+
+  // Background song: starts on the first tap anywhere (browsers block autoplay with sound)
+  (function () {
+    var song = document.getElementById('song'), btn = document.getElementById('music'), hint = document.getElementById('music-hint');
+    if (!song) return;
+    var started = false;
+    function show(playing) { btn.textContent = playing ? '❚❚' : '♫'; btn.classList.toggle('playing', playing); }
+    song.addEventListener('canplay', function () {
+      btn.classList.add('ready');
+      if (!started) hint.classList.remove('hide');
+    }, { once: true });
+    song.addEventListener('error', function () { btn.style.display = 'none'; hint.classList.add('hide'); });
+    function start() {
+      if (started) return;
+      started = true; hint.classList.add('hide');
+      song.volume = 0.6;
+      song.play().then(function () { show(true); }).catch(function () { started = false; });
+    }
+    document.addEventListener('pointerdown', function (e) { if (e.target !== btn) start(); }, { once: false, passive: true });
+    btn.addEventListener('click', function () {
+      hint.classList.add('hide');
+      if (song.paused) { started = true; song.play().then(function () { show(true); }); }
+      else { song.pause(); show(false); }
+    });
+  })();
 
   // Day tabs: group each day heading and its blocks into a panel
   (function () {
@@ -428,7 +650,11 @@
       tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
       panels.forEach(function (p, j) { p.hidden = j !== i; });
       try { localStorage.setItem('crestone-tab', i); } catch (e) {}
-      if (scroll && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({ behavior: 'smooth' });
+      if (scroll) {
+        // Jump to the top of the day, just below the sticky tab bar
+        var y = panels[i].getBoundingClientRect().top + window.pageYOffset - bar.offsetHeight - 4;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
     }
     // During the trip, open today's tab; otherwise the last tab viewed, or Thursday
     var start = 0, now = new Date();
