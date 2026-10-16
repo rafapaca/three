@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebecca &amp; Rafael</title>
+<meta name="description" content="Rebecca and Rafael's 3 year anniversary weekend in Crestone, Colorado, November 5 to 8, 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4efe6;
+    --paper: #fffdf8;
+    --ink: #221f1a;
+    --muted: #6f675b;
+    --line: #e3d9c8;
+    --accent: #9a4a2c;
+    --accent-soft: #f4e3da;
+    --sage: #4a5e4a;
+    --sage-soft: #e4ebe2;
+    --dusk: #5a4a7a;
+    --dusk-soft: #e9e3f1;
+    --gold: #b8893b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16140f; --paper: #1f1c15; --ink: #ede6d8; --muted: #a49c8d;
+      --line: #36312a; --accent: #d98a62; --accent-soft: #3a2a20;
+      --sage: #9bb79a; --sage-soft: #233024; --dusk: #b3a4d6; --dusk-soft: #2a2438; --gold: #d8aa56;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.55; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 64px; }
+  header { padding: 56px 0 24px; text-align: center; }
+  .eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: 12px; color: var(--accent); font-weight: 600; }
+  h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: clamp(38px, 8vw, 58px); line-height: 1.05; margin: 10px 0 8px; }
+  .sub { color: var(--muted); font-size: 15px; }
+  .scene { margin: 20px auto 0; display: block; width: 100%; max-width: 380px; }
+
+  .note { background: var(--sage-soft); border-left: 4px solid var(--sage); padding: 14px 16px; border-radius: 6px; margin: 24px 0; font-size: 15px; }
+  .note strong { color: var(--sage); }
+
+  h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 30px; margin: 44px 0 4px; }
+  .day-meta { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+
+  .block { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; }
+  .time { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .block h3 { margin: 4px 0 6px; font-size: 18px; font-weight: 600; }
+  .block p { margin: 0 0 8px; }
+  .block p:last-child { margin-bottom: 0; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
+  .tag.book { background: var(--accent-soft); color: var(--accent); }
+  .tag.check { background: var(--sage-soft); color: var(--sage); }
+  .tag.star { background: var(--dusk-soft); color: var(--dusk); }
+  .alt { color: var(--muted); font-size: 14px; }
+  .alt b { color: var(--ink); font-weight: 500; }
+
+  ul.tight { padding-left: 20px; margin: 8px 0 0; }
+  ul.tight li { margin-bottom: 6px; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 560px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 15px; }
+  .card h4 { margin: 0 0 6px; font-size: 15px; }
+  footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: 13px; }
+
+  .tabs { position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; padding: 10px 0; margin: 36px 0 0;
+    background: var(--bg); overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: 1 0 auto; min-width: 64px; border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+    border-radius: 12px; padding: 8px 10px; font: inherit; cursor: pointer; text-align: center; line-height: 1.2; }
+  .tab b { display: block; font-size: 15px; font-weight: 600; }
+  .tab span { font-size: 11px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+  .tab[aria-selected="true"] { background: var(--dusk); border-color: var(--dusk); color: #fff; }
+  .tab[aria-selected="true"] span { color: rgba(255,255,255,.8); }
+  .panel[hidden] { display: none; }
+  .panel > h2:first-child { margin-top: 18px; }
+
+  .countdown { display: flex; justify-content: center; gap: 10px; margin: 22px 0 6px; }
+  .cd { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 8px 0; width: 70px; text-align: center; }
+  .cd b { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.1; }
+  .cd span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .cd-label { text-align: center; color: var(--muted); font-size: 13px; }
+
+  .sky-wrap { margin: 32px 0 8px; }
+  .sky-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 26px; text-align: center; margin: 0 0 4px; }
+  .sky-sub { text-align: center; color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .sky { position: relative; border-radius: 14px; overflow: hidden; background: linear-gradient(#070a1c, #1b1638 70%, #3a2a4a); touch-action: manipulation; }
+  .sky canvas { display: block; width: 100%; height: 320px; cursor: crosshair; }
+  .score { position: absolute; top: 10px; right: 12px; color: #f3e6c4; font-size: 13px; letter-spacing: .08em; }
+  .card-wish { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); width: calc(100% - 32px); max-width: 440px;
+    background: rgba(255,250,238,.96); color: #221f1a; border-radius: 12px; padding: 14px 16px; text-align: center;
+    font-size: 15px; box-shadow: 0 8px 24px rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .3s; }
+  .card-wish.show { opacity: 1; pointer-events: auto; }
+  .card-wish small { display: block; color: #9a4a2c; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 11px; margin-bottom: 4px; }
+  .card-wish button { margin-top: 10px; border: 0; background: #5a4a7a; color: #fff; border-radius: 999px; padding: 6px 16px; font: inherit; font-size: 13px; cursor: pointer; }
+  .final { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    color: #f8edd2; background: rgba(7,10,28,.82); opacity: 0; pointer-events: none; transition: opacity .6s; padding: 16px; }
+  .final.show { opacity: 1; pointer-events: auto; }
+  .final h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 38px; margin: 0 0 6px; font-weight: 600; }
+  .final p { margin: 0 0 14px; max-width: 380px; }
+  .final button { border: 1px solid #f8edd2; background: transparent; color: #f8edd2; border-radius: 999px; padding: 6px 16px; font: inherit; font-size: 13px; cursor: pointer; }
+  .final .row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+
+  .modes { display: flex; gap: 8px; justify-content: center; margin: 0 0 10px; flex-wrap: wrap; }
+  .mode { border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 999px; padding: 6px 14px; font: inherit; font-size: 13px; cursor: pointer; }
+  .mode[aria-pressed="true"] { background: var(--dusk); border-color: var(--dusk); color: #fff; }
+  .legend { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+  .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .k-q { background: #e8c26a; } .k-d { background: #ff8fa3; } .k-w { background: #b49cff; box-shadow: 0 0 6px #b49cff; }
+
+  .collected { margin-top: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .col-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .col-head h3 { margin: 0; font-size: 16px; }
+  .col-head span { color: var(--muted); font-size: 13px; }
+  .linkbtn { border: 0; background: none; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer; padding: 0; }
+  #col-list { list-style: none; padding: 0; margin: 10px 0 0; }
+  #col-list li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid var(--line); font-size: 15px; }
+  #col-list li:first-child { border-top: 0; }
+  #col-list .chip { flex: 0 0 auto; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #221f1a;
+    border-radius: 999px; padding: 2px 8px; margin-top: 3px; }
+  #col-list .txt { flex: 1; }
+  #col-list li.done .txt { text-decoration: line-through; color: var(--muted); }
+  #col-list input { margin-top: 5px; width: 17px; height: 17px; accent-color: var(--dusk); }
+  #col-empty { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Three years · Crestone, Colorado</div>
+  <h1>Rebecca &amp; Rafael</h1>
+  <div class="sub">Thursday, November 5 to Sunday, November 8, 2026 · a cabin under the Sangre de Cristos, hot springs, sand dunes, and the darkest sky in Colorado</div>
+  <svg class="scene" viewBox="0 0 380 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="60" cy="30" r="1.6" fill="var(--gold)"/><circle cx="120" cy="18" r="1.2" fill="var(--gold)"/>
+    <circle cx="200" cy="26" r="1.8" fill="var(--gold)"/><circle cx="260" cy="12" r="1.2" fill="var(--gold)"/>
+    <circle cx="330" cy="34" r="1.5" fill="var(--gold)"/><circle cx="290" cy="44" r="1" fill="var(--gold)"/>
+    <path d="M318 20 a9 9 0 1 0 8 14 a7 7 0 1 1 -8 -14z" fill="var(--gold)"/>
+    <polygon points="0,120 70,58 110,78 160,30 205,70 250,40 300,82 380,52 380,120" fill="var(--dusk)" opacity=".85"/>
+    <polygon points="145,46 160,30 175,46 167,42 160,52 153,42" fill="var(--paper)"/>
+    <polygon points="238,52 250,40 262,52 256,49 250,57 244,49" fill="var(--paper)"/>
+    <path d="M0,120 Q90,96 190,108 T380,100 L380,120 Z" fill="var(--gold)" opacity=".55"/>
+  </svg>
+  <div class="countdown" id="countdown">
+    <div class="cd"><b id="cd-d">0</b><span>days</span></div>
+    <div class="cd"><b id="cd-h">0</b><span>hours</span></div>
+    <div class="cd"><b id="cd-m">0</b><span>min</span></div>
+    <div class="cd"><b id="cd-s">0</b><span>sec</span></div>
+  </div>
+  <div class="cd-label" id="cd-label">until we land in the valley</div>
+</header>
+
+<section class="sky-wrap">
+  <h2 class="sky-title">Catch a shooting star</h2>
+  <p class="sky-sub">Tap the falling stars. Each one holds something for the trip. Everything you catch is saved below, so you can check it off in Crestone.</p>
+  <div class="modes" role="group" aria-label="Game length">
+    <button class="mode" type="button" data-mode="3" aria-pressed="true">Three stars · one per year</button>
+    <button class="mode" type="button" data-mode="9" aria-pressed="false">Full sky · nine stars</button>
+  </div>
+  <div class="legend">
+    <span><i class="k-q"></i>Gold: a question to ask</span>
+    <span><i class="k-d"></i>Rose: something to do</span>
+    <span><i class="k-w"></i>Violet comet: a wish, rare and fast</span>
+  </div>
+  <div class="sky" id="sky">
+    <canvas id="skyCanvas" aria-label="Night sky game: tap shooting stars to catch them"></canvas>
+    <div class="score" id="score">0 / 3</div>
+    <div class="card-wish" id="wish">
+      <small id="wish-label">Star one</small>
+      <div id="wish-text"></div>
+      <button id="wish-btn" type="button">Keep going</button>
+    </div>
+    <div class="final" id="final">
+      <h3 id="final-title">Three years</h3>
+      <p id="final-text">Three stars caught. They are saved below for Saturday night, under the real thing.</p>
+      <div class="row">
+        <button id="replay" type="button">Play again</button>
+        <button id="go-full" type="button">Try the full sky</button>
+      </div>
+    </div>
+  </div>
+  <div class="collected">
+    <div class="col-head">
+      <h3>Our stars <span id="col-count"></span></h3>
+      <button class="linkbtn" id="col-clear" type="button">Clear all</button>
+    </div>
+    <ul id="col-list"></ul>
+    <p id="col-empty">Stars you catch land here. Check them off during the trip.</p>
+  </div>
+</section>
+
+<div class="note">
+  <strong>What kind of place this is.</strong> Crestone is a town of about 100 people at 8,000 feet, home to more than two dozen spiritual centers, and a certified International Dark Sky Community. There are a handful of restaurants, one brewery, and a food co-op. Three hot springs and Great Sand Dunes National Park are 30 to 45 minutes away. November is quiet and cold, with clear days. Items marked <span class="tag book">book</span> need a reservation; <span class="tag check">check</span> means call the week before, since small-town hours move.
+</div>
+
+<h2>Thursday, November 5</h2>
+<div class="day-meta">Arrival night · in by 9 pm · nothing in Crestone serves food that late</div>
+
+<div class="block">
+  <div class="time">On the way in</div>
+  <h3>Groceries before the last 12 miles</h3>
+  <p>Crestone has a small co-op (Elephant Cloud Market) but it closes early. Stock up in the last real town on your route: Safeway or Walmart in Alamosa if flying into ALS, City Market in Salida if coming from the north, Walmart in Alamosa or Safeway in Salida if driving from Denver or Colorado Springs. Pick up: wine, cheese, bread, fruit, chocolate, eggs and bacon for Saturday, and firewood if the cabin does not supply it.</p>
+  <p class="alt">Drive times: Alamosa 1 hr 15 min · Colorado Springs 2 hr 45 min · Denver 3 hr 45 min. The last stretch from Moffat to Crestone is 12.5 miles of straight paved road with no lights. Watch for deer and elk.</p>
+</div>
+
+<div class="block">
+  <div class="time">10 pm</div>
+  <h3>First night <span class="tag star">dark sky</span></h3>
+  <p>Fire on, unpack, pour a glass, then go outside with a blanket for fifteen minutes. The moon is a thin waning crescent that rises after midnight, so the Milky Way will be overhead with no interference. This is one of the darkest places in the lower 48.</p>
+</div>
+
+<h2>Friday, November 6</h2>
+<div class="day-meta">Crestone day · the town, the temples, a couples massage, a soak</div>
+
+<div class="block">
+  <div class="time">9 am</div>
+  <h3>Breakfast at The Cloud Station <span class="tag check">check</span></h3>
+  <p>Breakfast burritos and coffee in a converted gas station on South Cottonwood. Backup: Bayou Mountain at Bob's Diner on Galena (New Orleans style, weekday mornings).</p>
+</div>
+
+<div class="block">
+  <div class="time">10:30 am</div>
+  <h3>Temple drive through the Baca Grande</h3>
+  <p>The spiritual centers sit on the hillside south of town along Camino Baca Grande. Three stops, each a short walk from the car:</p>
+  <ul class="tight">
+    <li><b>Tashi Gomang Stupa.</b> White Tibetan stupa with prayer flags and a view across the whole valley. Walk the circle together.</li>
+    <li><b>Haidakhandi Universal Ashram.</b> Hindu temple with a quiet garden. Shoes off at the door. Visitors welcome.</li>
+    <li><b>The Crestone Ziggurat.</b> A stone spiral tower on a hill. Short climb to the top, 360 degree view of the Sangres and the valley.</li>
+  </ul>
+  <p class="alt">Dress warm and speak quietly at all three. They are active places of practice.</p>
+</div>
+
+<div class="block">
+  <div class="time">12:30 pm</div>
+  <h3>Lunch at Our Food Is Art <span class="tag check">check</span></h3>
+  <p>Tacos, bowls, and smoothies on Galena. Open Thursday to Saturday. Backup: Crestone Brewing Co. on Silver Avenue.</p>
+</div>
+
+<div class="block">
+  <div class="time">2 pm</div>
+  <h3>Couples massage at Crestone Massage Therapy <span class="tag book">book</span></h3>
+  <p>Jane Adorney and Steve Fillenberg work out of their off-grid strawbale home 10 minutes from town, with more than 50 years of experience between them. Book both for the same slot so Rebecca and Rafael are on the tables at the same time. Ask for 60 or 90 minutes and hot stone if they offer it. 720-512-1802.</p>
+  <p class="alt"><b>Backup:</b> Joyful Journey has on-site therapists, so a massage can be added before the soak at 5 pm. Smiling Heart Healing Arts and Jenny Che Raven are solo therapists in town.</p>
+</div>
+
+<div class="block">
+  <div class="time">5 pm</div>
+  <h3>Evening soak at Joyful Journey Hot Springs <span class="tag book">book</span></h3>
+  <p>Thirty minutes west in Moffat. Three mineral pools at different temperatures, two hot tubs, a cold plunge, and a dry sauna, all facing the mountains. Day use runs until 8 pm on Fridays. Call ahead to confirm day passes are available: 719-256-4328.</p>
+</div>
+
+<div class="block">
+  <div class="time">7:30 pm</div>
+  <h3>Dinner at The Bliss <span class="tag book">book</span></h3>
+  <p>Thai and French in the Bliss Inn on Silver Avenue, the one place in town open seven days a week. Reserve a table and ask for one by the window.</p>
+  <p class="alt"><b>Backup:</b> Sage's Hearth or People's Pub &amp; Kitchen, both in town. Call for hours.</p>
+</div>
+
+<h2>Saturday, November 7</h2>
+<div class="day-meta">Anniversary day · the dunes, a waterfall, an adults-only hot springs, and a long night at the cabin</div>
+
+<div class="block">
+  <div class="time">8:30 am</div>
+  <h3>Breakfast at the cabin</h3>
+  <p>Cook together. Pack the picnic for lunch while the coffee brews: sandwiches, fruit, a thermos of something hot, a blanket.</p>
+</div>
+
+<div class="block">
+  <div class="time">10 am</div>
+  <h3>Great Sand Dunes National Park</h3>
+  <p>Forty-five minutes south. Park at the main Dunes lot and walk out onto the sand. The creek bed will be dry in November, so you can cross straight onto the dunes. Climb High Dune if the legs are willing (about 2.5 miles round trip, a real workout in sand), or just pick a ridge and sit. The dunes are empty in November and the light on the Sangres behind them is the whole point.</p>
+  <p class="alt">Entrance fee is $25 per vehicle. The visitor center has a short film worth ten minutes.</p>
+</div>
+
+<div class="block">
+  <div class="time">12:30 pm</div>
+  <h3>Picnic at the dunes, then Zapata Falls</h3>
+  <p>Eat on the sand with the dunes in front of you. Then drive 10 minutes south to the Zapata Falls turnoff: a rough 3.5 mile gravel road up to the trailhead (any car with care, AWD ideal), then a half mile walk to a 25 foot waterfall tucked inside a rock crevice. In November it is partly frozen into ice columns. The overlook on the way up has the best single view of the dunes anywhere.</p>
+</div>
+
+<div class="block">
+  <div class="time">3 pm</div>
+  <h3>The Greenhouse at Sand Dunes Recreation <span class="tag book">book</span></h3>
+  <p>In Hooper, 35 minutes west of the park and on the way back toward Crestone. The Greenhouse is a 21 and over hot springs built inside a 10,000 square foot greenhouse: four pools at different temperatures, a sauna, tropical plants, and a bar that serves you in the water. This is the anniversary soak. Two hours, a drink each, no phones. Call 719-378-2807 to confirm Greenhouse hours and whether they take reservations for the day.</p>
+</div>
+
+<div class="block">
+  <div class="time">6 pm</div>
+  <h3>Anniversary dinner <span class="tag book">book</span></h3>
+  <p><b>Option A, eat there:</b> the Mile Deep Grille at Sand Dunes Recreation serves to the pool deck, so you can go straight from the water to a table. Easy, warm, no driving between.</p>
+  <p><b>Option B, back in Crestone:</b> The Bliss again, or Our Food Is Art if you liked it Friday (Saturday close is 8 pm, so reserve for 6:30 and leave Hooper by 5:30).</p>
+</div>
+
+<div class="block">
+  <div class="time">8:30 pm</div>
+  <h3>Cabin night <span class="tag star">dark sky</span></h3>
+  <p>Fire, the good bottle you saved, and the gifts. Then outside: lay the blanket down, lie back, and watch for shooting stars. The Taurid meteor shower peaks in early November and throws slow, bright fireballs. Read each other the letters written before the trip.</p>
+</div>
+
+<h2>Sunday, November 8</h2>
+<div class="day-meta">Departure · leave Crestone by 2:30 pm for Alamosa, by 1 pm for Colorado Springs, by noon for Denver</div>
+
+<div class="block">
+  <div class="time">9 am</div>
+  <h3>Slow breakfast in town</h3>
+  <p>The Cloud Station or the cabin. Walk the two blocks of downtown one more time. Stop at the Crestone Mercantile and the co-op for a small thing to take home.</p>
+</div>
+
+<div class="block">
+  <div class="time">11 am</div>
+  <h3>Valley View Hot Springs <span class="tag book">book</span></h3>
+  <p>Forty minutes north near Villa Grove, on a hillside with the whole valley below. Natural rock pools fed by warm springs, a waterfall pool, and a sauna, no chemicals, no lights, no phones allowed near the water. It is clothing optional and run by a land trust, so it feels like nowhere else. Reservations are required and non-members can only book one day ahead, so call 719-256-4315 on Saturday morning. Day use opens at 11 am.</p>
+  <p class="alt"><b>If that is not your thing:</b> hike the North Crestone Creek Trail instead. Trailhead is 2 miles north of town past the campground. Walk along the creek through aspen and pine for a 3 to 4 mile out and back, then an early lunch at Crestone Brewing Co.</p>
+</div>
+
+<div class="block">
+  <div class="time">1:30 pm</div>
+  <h3>Lunch on the way out</h3>
+  <p>Heading to Alamosa: Milagros Coffee House or San Luis Valley Brewing downtown. Heading north to Salida: The Fritz or Amicas. Then the airport, or the long road home.</p>
+</div>
+
+<h2>Before we leave Atlanta</h2>
+<div class="grid">
+  <div class="card">
+    <h4>Reservations</h4>
+    <ul class="tight">
+      <li>Crestone Massage Therapy, couples, Fri 2 pm: 720-512-1802</li>
+      <li>The Bliss, Fri 7:30 pm (and Sat if choosing Option B)</li>
+      <li>Joyful Journey day pass, Fri evening: 719-256-4328</li>
+      <li>Sand Dunes Recreation Greenhouse, Sat 3 pm: 719-378-2807</li>
+      <li>Valley View, call Sat morning for Sun: 719-256-4315</li>
+      <li>Rental car with AWD and decent clearance</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Calls the week before</h4>
+    <ul class="tight">
+      <li>Cloud Station, Our Food Is Art, Bayou Mountain hours</li>
+      <li>Cabin: firewood, hot tub, heat, check-in instructions</li>
+      <li>Great Sand Dunes conditions: 719-378-6395</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Pack</h4>
+    <ul class="tight">
+      <li>Real winter layers. Highs 40s, lows single digits to teens. Wind on the dunes.</li>
+      <li>Waterproof boots with grip, hat, gloves, sunglasses</li>
+      <li>Two swimsuits each so one is always dry, plus sandals for pool decks</li>
+      <li>Headlamp or flashlight with a red mode for stargazing</li>
+      <li>A blanket you do not mind getting sandy</li>
+      <li>The letters, written before the trip</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Altitude and hot water</h4>
+    <ul class="tight">
+      <li>Crestone is at 8,000 feet. Drink more water than feels necessary.</li>
+      <li>Hot springs plus altitude plus alcohol hits hard. Pace it.</li>
+      <li>Sunscreen even when it is cold, especially on the sand</li>
+    </ul>
+  </div>
+</div>
+
+<footer>Rebecca &amp; Rafael · three years · Crestone, Colorado · November 2026</footer>
+</div>
+
+<script>
+(function () {
+  // Countdown to Thu Nov 5 2026, 9 pm Mountain Standard Time
+  var target = new Date('2026-11-05T21:00:00-07:00').getTime();
+  var end = new Date('2026-11-08T18:00:00-07:00').getTime();
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function tick() {
+    var now = Date.now(), diff = target - now;
+    var label = document.getElementById('cd-label');
+    if (diff <= 0) {
+      document.getElementById('countdown').style.display = 'none';
+      label.textContent = now < end ? 'We are here. Happy three years.' : 'Three years, and the best weekend yet.';
+      return;
+    }
+    var d = Math.floor(diff / 86400000), h = Math.floor(diff / 3600000) % 24,
+        m = Math.floor(diff / 60000) % 60, s = Math.floor(diff / 1000) % 60;
+    document.getElementById('cd-d').textContent = d;
+    document.getElementById('cd-h').textContent = pad(h);
+    document.getElementById('cd-m').textContent = pad(m);
+    document.getElementById('cd-s').textContent = pad(s);
+    setTimeout(tick, 1000);
+  }
+  tick();
+
+  // Day tabs: group each day heading and its blocks into a panel
+  (function () {
+    var wrap = document.querySelector('.wrap');
+    var defs = [
+      { match: 'Thursday', short: 'Thu', sub: 'Nov 5' },
+      { match: 'Friday', short: 'Fri', sub: 'Nov 6' },
+      { match: 'Saturday', short: 'Sat', sub: 'Nov 7' },
+      { match: 'Sunday', short: 'Sun', sub: 'Nov 8' },
+      { match: 'Before we leave', short: 'Prep', sub: 'Checklist' }
+    ];
+    var heads = Array.prototype.filter.call(wrap.querySelectorAll(':scope > h2'), function (h) {
+      return defs.some(function (d) { return h.textContent.indexOf(d.match) === 0; });
+    });
+    if (!heads.length) return;
+    var bar = document.createElement('div');
+    bar.className = 'tabs'; bar.setAttribute('role', 'tablist');
+    wrap.insertBefore(bar, heads[0]);
+    var tabs = [], panels = [];
+    heads.forEach(function (h, i) {
+      var d = defs.filter(function (x) { return h.textContent.indexOf(x.match) === 0; })[0];
+      var panel = document.createElement('section');
+      panel.className = 'panel'; panel.id = 'panel-' + i; panel.setAttribute('role', 'tabpanel');
+      var node = h;
+      wrap.insertBefore(panel, h);
+      while (node && node.tagName !== 'FOOTER' && (node === h || heads.indexOf(node) === -1)) {
+        var next = node.nextElementSibling; panel.appendChild(node); node = next;
+      }
+      var b = document.createElement('button');
+      b.className = 'tab'; b.type = 'button'; b.setAttribute('role', 'tab');
+      b.setAttribute('aria-controls', panel.id);
+      b.innerHTML = '<b>' + d.short + '</b><span>' + d.sub + '</span>';
+      b.addEventListener('click', function () { select(i, true); });
+      bar.appendChild(b); tabs.push(b); panels.push(panel);
+    });
+    function select(i, scroll) {
+      tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+      panels.forEach(function (p, j) { p.hidden = j !== i; });
+      try { localStorage.setItem('crestone-tab', i); } catch (e) {}
+      if (scroll && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({ behavior: 'smooth' });
+    }
+    // During the trip, open today's tab; otherwise the last tab viewed, or Thursday
+    var start = 0, now = new Date();
+    var dayStarts = ['2026-11-05', '2026-11-06', '2026-11-07', '2026-11-08'].map(function (s) { return new Date(s + 'T00:00:00-07:00'); });
+    var tripEnd = new Date('2026-11-09T00:00:00-07:00');
+    if (now >= dayStarts[0] && now < tripEnd) {
+      for (var k = dayStarts.length - 1; k >= 0; k--) { if (now >= dayStarts[k]) { start = k; break; } }
+    } else {
+      try { var saved = parseInt(localStorage.getItem('crestone-tab'), 10); if (saved >= 0 && saved < tabs.length) start = saved; } catch (e) {}
+    }
+    select(start, false);
+  })();
+
+  // Shooting star game
+  var KINDS = {
+    q: { name: 'Ask each other', chip: 'Ask', head: '#ffe7a8', trail: '255,231,168', label: '#9a4a2c', r: 3, len: [70, 120], speed: [3.2, 5.4] },
+    d: { name: 'Do this on the trip', chip: 'Do', head: '#ffb3c1', trail: '255,143,163', label: '#c0405c', r: 3.2, len: [70, 120], speed: [3.2, 5.2] },
+    w: { name: 'Wish comet', chip: 'Wish', head: '#e2d6ff', trail: '180,156,255', label: '#5a4a7a', r: 5, len: [140, 190], speed: [6.2, 7.8] }
+  };
+  var CHIP_BG = { q: '#e8c26a', d: '#ff8fa3', w: '#b49cff' };
+  var POOLS = {
+    q: [
+      'What was your first impression of me, honestly?',
+      'Which day from our first year would you live again?',
+      'What is something I do that you have never told me you love?',
+      'Where do you want us to be when we celebrate year five?',
+      'What was the hardest moment of these three years, and what got us through it?',
+      'What is one thing you have learned from me?',
+      'Pick one trip from the last three years to do again. Why that one?',
+      'What is a small habit of ours you hope never changes?',
+      'When did you first know this was serious?',
+      'What is the funniest thing that has happened to us?',
+      'What song makes you think of us?',
+      'What is one thing I do that makes a bad day better?',
+      'What did you think on our first date that you never said out loud?',
+      'What is something you want me to know but have not found the right moment to say?',
+      'What is your favorite photo of us, and what was happening right before it?',
+      'What is one way I have changed in three years?',
+      'What is one way you have changed because of us?',
+      'If our three years were a movie, what would the title be?',
+      'What is the best meal we have ever shared?',
+      'What is one tradition you want us to start this year?',
+      'What is the most "us" moment you can remember?',
+      'What is a worry you had about us that turned out to be wrong?',
+      'Describe our ideal ordinary Sunday, ten years from now.',
+      'What is one thing you want to get better at as a partner?',
+      'What is the best piece of advice anyone gave you about us?'
+    ],
+    d: [
+      'Slow dance by the fire to one song. The other person picks it.',
+      'Take a photo at the stupa with your foreheads touching.',
+      'Write a three line note and hide it in the other person\'s bag. Do not mention it.',
+      'In the hot springs, each say three things you are grateful for this year.',
+      'Lie on the blanket outside and count shooting stars. First to five picks breakfast.',
+      'Order for each other at dinner. No vetoes.',
+      'Cook one dish together using only what is already in the cabin.',
+      'Take a sunrise photo on Sunday from the cabin door.',
+      'Recreate the first photo you ever took together.',
+      'Hold hands the whole walk out onto the dunes.',
+      'Each pick one small gift at the Mercantile for the other, under $10.',
+      'Spend ten minutes outside in total silence, just looking at the mountains.',
+      'At dinner, each tell the story of how you met from your own side.',
+      'Run or roll down one sand dune together.',
+      'Leave both phones in the car for the whole Greenhouse soak.',
+      'Walk the stupa circle together, hand in hand.',
+      'Read the letters by the fire, trading one paragraph at a time.',
+      'Make a toast at dinner to year four.',
+      'Take one portrait of the other person every day. Compare them on Sunday.',
+      'Give a ten minute shoulder rub, then swap.',
+      'Pick a star in the sky and name it after a moment from these three years.'
+    ],
+    w: [
+      'Plan the next trip right now. Pick the place and the month.',
+      'Each name one thing we will do together before year four.',
+      'Each write one goal for the other. Seal them. Open them next anniversary.',
+      'Name the place where you can picture us living someday.',
+      'Pick a date in the next three months for a full day with no plans.',
+      'Choose one new thing to learn together this year.',
+      'Agree on one thing to say yes to more often.',
+      'Choose the song for year four.',
+      'Name one person to thank for helping us get here, and call them after the trip.',
+      'Make one small promise for the drive home.'
+    ]
+  };
+  var ORD = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  var STORE = 'crestone-stars-v1';
+
+  var canvas = document.getElementById('skyCanvas');
+  var ctx = canvas.getContext('2d');
+  var wish = document.getElementById('wish'), wishText = document.getElementById('wish-text'),
+      wishLabel = document.getElementById('wish-label'), wishBtn = document.getElementById('wish-btn'),
+      finalEl = document.getElementById('final'), scoreEl = document.getElementById('score'),
+      finalTitle = document.getElementById('final-title'), finalText = document.getElementById('final-text'),
+      goFull = document.getElementById('go-full'), modeBtns = document.querySelectorAll('.mode'),
+      colList = document.getElementById('col-list'), colEmpty = document.getElementById('col-empty'),
+      colCount = document.getElementById('col-count');
+  var W = 0, H = 0, dpr = 1, stars = [], meteors = [], sparks = [];
+  var goal = 3, caught = 0, paused = false, lastSpawn = 0, drawnThisGame = [], tally = { q: 0, d: 0, w: 0 };
+  var collection = load();
+
+  function load() {
+    try { var v = JSON.parse(localStorage.getItem(STORE)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+  }
+  function save() { try { localStorage.setItem(STORE, JSON.stringify(collection)); } catch (e) {} }
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function renderCollection() {
+    colList.innerHTML = '';
+    collection.forEach(function (item, idx) {
+      var li = document.createElement('li');
+      if (item.done) li.className = 'done';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox'; cb.checked = !!item.done;
+      cb.setAttribute('aria-label', 'Mark done');
+      cb.addEventListener('change', function () { collection[idx].done = cb.checked; save(); renderCollection(); });
+      var chip = document.createElement('span');
+      chip.className = 'chip'; chip.style.background = CHIP_BG[item.k]; chip.textContent = KINDS[item.k].chip;
+      var txt = document.createElement('span');
+      txt.className = 'txt'; txt.textContent = item.t;
+      li.appendChild(cb); li.appendChild(chip); li.appendChild(txt);
+      colList.appendChild(li);
+    });
+    var done = collection.filter(function (c) { return c.done; }).length;
+    colEmpty.style.display = collection.length ? 'none' : 'block';
+    colCount.textContent = collection.length ? '· ' + done + ' of ' + collection.length + ' done' : '';
+  }
+  document.getElementById('col-clear').addEventListener('click', function () {
+    if (!collection.length) return;
+    if (window.confirm('Clear all saved stars?')) { collection = []; save(); renderCollection(); }
+  });
+
+  function draw(kind) {
+    var saved = collection.map(function (c) { return c.t; });
+    var pool = POOLS[kind];
+    var fresh = pool.filter(function (t) { return saved.indexOf(t) === -1 && drawnThisGame.indexOf(t) === -1; });
+    if (!fresh.length) fresh = pool.filter(function (t) { return drawnThisGame.indexOf(t) === -1; });
+    if (!fresh.length) fresh = pool;
+    var t = fresh[Math.floor(Math.random() * fresh.length)];
+    drawnThisGame.push(t);
+    return t;
+  }
+
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    var r = canvas.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    stars = [];
+    var count = Math.round(W * H / 1400);
+    for (var i = 0; i < count; i++) {
+      stars.push({ x: Math.random() * W, y: Math.random() * H * 0.92, r: Math.random() * 1.3 + 0.2,
+                   p: Math.random() * Math.PI * 2, sp: 0.5 + Math.random() * 1.5 });
+    }
+  }
+  function setMode(n) {
+    goal = n;
+    Array.prototype.forEach.call(modeBtns, function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-mode') === n ? 'true' : 'false'); });
+    reset();
+  }
+  Array.prototype.forEach.call(modeBtns, function (b) {
+    b.addEventListener('click', function () { setMode(+b.getAttribute('data-mode')); });
+  });
+  function reset() {
+    caught = 0; paused = false; meteors = []; sparks = []; drawnThisGame = []; tally = { q: 0, d: 0, w: 0 };
+    scoreEl.textContent = '0 / ' + goal;
+    wish.classList.remove('show'); finalEl.classList.remove('show');
+  }
+  function pickKind() {
+    var r = Math.random();
+    if (r < 0.12) return 'w';
+    if (r < 0.52) return 'd';
+    return 'q';
+  }
+  function spawn() {
+    var kind = pickKind(), K = KINDS[kind];
+    var fromLeft = Math.random() < 0.5;
+    var speed = rand(K.speed[0], K.speed[1]);
+    var angle = (Math.PI / 5) + Math.random() * (Math.PI / 9);
+    meteors.push({
+      k: kind,
+      x: fromLeft ? Math.random() * W * 0.5 : W * 0.5 + Math.random() * W * 0.5,
+      y: -10 + Math.random() * H * 0.25,
+      vx: (fromLeft ? 1 : -1) * Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      len: rand(K.len[0], K.len[1])
+    });
+  }
+  function hit(px, py) {
+    if (paused) return;
+    for (var i = meteors.length - 1; i >= 0; i--) {
+      var m = meteors[i];
+      var dx = px - m.x, dy = py - m.y, rad = m.k === 'w' ? 42 : 34;
+      if (dx * dx + dy * dy < rad * rad) {
+        meteors.splice(i, 1);
+        burst(m.x, m.y, m.k);
+        caught++; tally[m.k]++;
+        scoreEl.textContent = caught + ' / ' + goal;
+        paused = true;
+        var text = draw(m.k);
+        collection.unshift({ k: m.k, t: text, done: false });
+        save(); renderCollection();
+        wishLabel.textContent = 'Star ' + ORD[caught - 1] + ' · ' + KINDS[m.k].name;
+        wishLabel.style.color = KINDS[m.k].label;
+        wishText.textContent = text;
+        wishBtn.textContent = caught < goal ? 'Keep going' : 'Finish';
+        wish.classList.add('show');
+        return;
+      }
+    }
+  }
+  function burst(x, y, kind) {
+    var n = kind === 'w' ? 60 : 26, col = 'rgb(' + KINDS[kind].trail + ')';
+    for (var i = 0; i < n; i++) {
+      var a = Math.random() * Math.PI * 2, s = 1 + Math.random() * (kind === 'w' ? 4.5 : 3);
+      sparks.push({ x: x, y: y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: 1, c: col });
+    }
+  }
+  function finish() {
+    var parts = [];
+    if (tally.q) parts.push(tally.q + (tally.q === 1 ? ' question' : ' questions'));
+    if (tally.d) parts.push(tally.d + (tally.d === 1 ? ' thing to do' : ' things to do'));
+    if (tally.w) parts.push(tally.w + (tally.w === 1 ? ' wish' : ' wishes'));
+    var list = parts.length > 1 ? parts.slice(0, -1).join(', ') + ' and ' + parts[parts.length - 1] : parts[0];
+    if (goal === 3) {
+      finalTitle.textContent = 'Three years';
+      finalText.textContent = 'You caught ' + list + '. They are saved below for Saturday night, under the real thing.';
+      goFull.style.display = '';
+    } else {
+      finalTitle.textContent = 'A full sky';
+      finalText.textContent = 'Nine stars: ' + list + '. Enough for the whole weekend. Check them off below as you go.';
+      goFull.style.display = 'none';
+    }
+    if (tally.w) finalText.textContent += ' You caught a wish comet, which is rare. Make it count.';
+    finalEl.classList.add('show');
+  }
+  canvas.addEventListener('pointerdown', function (e) {
+    var r = canvas.getBoundingClientRect();
+    hit(e.clientX - r.left, e.clientY - r.top);
+  });
+  wishBtn.addEventListener('click', function () {
+    wish.classList.remove('show');
+    if (caught >= goal) finish(); else paused = false;
+  });
+  document.getElementById('replay').addEventListener('click', reset);
+  goFull.addEventListener('click', function () { setMode(9); });
+
+  function frame(t) {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      ctx.globalAlpha = 0.45 + 0.55 * Math.abs(Math.sin(t / 1000 * s.sp + s.p));
+      ctx.fillStyle = '#fff6dc';
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = '#120e22';
+    ctx.beginPath(); ctx.moveTo(0, H);
+    ctx.lineTo(0, H * 0.82); ctx.lineTo(W * 0.18, H * 0.7); ctx.lineTo(W * 0.3, H * 0.78);
+    ctx.lineTo(W * 0.45, H * 0.6); ctx.lineTo(W * 0.58, H * 0.75); ctx.lineTo(W * 0.7, H * 0.64);
+    ctx.lineTo(W * 0.84, H * 0.8); ctx.lineTo(W, H * 0.72); ctx.lineTo(W, H); ctx.fill();
+
+    if (!paused && caught < goal && t - lastSpawn > 1000 && meteors.length < 3) { spawn(); lastSpawn = t; }
+    for (var j = meteors.length - 1; j >= 0; j--) {
+      var m = meteors[j], K = KINDS[m.k];
+      if (!paused) { m.x += m.vx; m.y += m.vy; }
+      var sp = Math.hypot(m.vx, m.vy);
+      var tx = m.x - m.vx / sp * m.len, ty = m.y - m.vy / sp * m.len;
+      var g = ctx.createLinearGradient(m.x, m.y, tx, ty);
+      g.addColorStop(0, 'rgba(' + K.trail + ',1)'); g.addColorStop(1, 'rgba(' + K.trail + ',0)');
+      ctx.strokeStyle = g; ctx.lineWidth = m.k === 'w' ? 3.6 : 2.4; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(m.x, m.y); ctx.lineTo(tx, ty); ctx.stroke();
+      if (m.k === 'w') {
+        ctx.globalAlpha = 0.35; ctx.fillStyle = K.head;
+        ctx.beginPath(); ctx.arc(m.x, m.y, K.r * 2.6, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      ctx.fillStyle = K.head;
+      ctx.beginPath(); ctx.arc(m.x, m.y, K.r, 0, Math.PI * 2); ctx.fill();
+      if (m.y > H * 0.85 || m.x < -60 || m.x > W + 60) meteors.splice(j, 1);
+    }
+    for (var k = sparks.length - 1; k >= 0; k--) {
+      var p = sparks[k];
+      p.x += p.vx; p.y += p.vy; p.vy += 0.04; p.life -= 0.02;
+      if (p.life <= 0) { sparks.splice(k, 1); continue; }
+      ctx.globalAlpha = p.life; ctx.fillStyle = p.c;
+      ctx.beginPath(); ctx.arc(p.x, p.y, 1.8, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+  window.addEventListener('resize', resize);
+  resize(); renderCollection(); reset(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
